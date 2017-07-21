@@ -11,7 +11,7 @@
 * What is a branch and why would you use one?
 
   *If your Master branch is the main highway you're traveling to get
-  to a destination, a branch is a quick side road detour you take along
+  to a destination, a branch is a quick side-road-detour you take along
   the way. In Git you'd use a branch if you'd like to create a new feature
   and keep your in-progress code away from working code, or you'd use a
   branch to experiment with changes without changing your working code.*
