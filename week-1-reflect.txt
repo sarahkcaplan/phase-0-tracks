@@ -1,0 +1,91 @@
+1. Command Line:
+
+  *What is a shell? What is "bash?"*
+
+    Bash is the program that takes command line code and allows you to manipulate the operating system with command line scripts which is quicker and more efficient than through the GUI. A shell is a bash.
+
+
+  *In your own words, write what each of the following commands does:*
+
+  **pwd**
+    "Print working directory" shows the file path and name of the file/directory you're currently in.
+
+  **ls**
+    Lists the files and/or subdirectories within the current directory. Does not show hidden files.
+
+  **mv**
+    Moves a file. Copies the original file to the destination given on the command line then deletes the file from its original location. Can also be used to rename files even if the file is not moved to a new directory.
+
+  **cd**
+    Change directory. Navigate up and down within a file structure.
+
+  **touch**
+    Create a new file within your current location in the directory. Can specify the file type by appending type to file name, e.g. *.txt, *.md, *.py, *.css.
+
+  **mkdir**
+    Create a new file/directory within your current location in the directory.
+
+  **rm**
+    Remove/delete a file. Can be used on directories by adding the flag -r.
+
+  **help**
+    Displays git documentation. Can be used to learn about specific git commands.
+
+  **find**
+    Use find [string] to search within a directory and match on the given string.
+
+  **grep**
+    Use grep [string] to search within a file and match on the given string.
+
+
+1. Git:
+
+  *What is version control and why do developers use it?*
+
+    Version control allows developers to save work at many points along the development process. This is extremely useful for "returning" to a point in the past and for safeguarding files against loss.
+
+
+  *What is a commit? What are the best practices for commit messages?*
+
+    A commit is a point in time when the developer tells the version control to save a copy of the file(s) as it is. Best practices for messages are what changed, why it changed, any effect that change may have on other files.
+
+  *What is a branch?*
+
+    A branch is a copy of some code up to a specified commit on which a developer can make and save code changes without affecting the branch from which the code was copied.
+
+  *What are the 3 stages of a git change and how do you move a file from one stage to the other?*
+
+     1. Untracked - Files that are invisible to git. Use "git add" to make the file visible to git.
+
+     1. Modified - Files that git is tracking. These files have been modified since a prior commit. Use "git add" to move this file to be staged for a commit.
+
+     1. Staged - Files that are in the pre-commit staging area. Using "git status" shows the list of staged files. Files can be removed from staging, by using "git reset HEAD [filename]" to remove the file from the staging area, or use "git commit" to commit the file to git. Committing a file to git says, "Save this file at exactly this point in its development."
+
+
+
+1. GitHub:
+
+  *Write an explanation of and compare Git and GitHub to one another.*
+
+    Git is a powerful "Save As"-type of functionality that gives developers freedom to experiment and move back in time, so to speak, to previous versions of code. GitHub is a cloud-based platform that gives graphical representations of these versions of code. There are two additional benefits: First, GitHub expands the access of code to teams of developers. Second, GitHub hosts code on many servers which gives protects the code in the event that any one sever is damaged.
+
+  *In your own words, write instructions to create, clone and update a repository.*
+
+    GitHub expands Git beyond your local machine. If you create a git repository on your local machine, clone it to GitHub to move it to GitHub. (The preferred way--because it's easier--is to first create a repository on GitHub then clone it to your local machine).This is copying your code from one computer to another computer. Finally, if you make updates to the code on your local machine, to bring the cloned repository up-to-date, stage and then "git push" your changes to that repository.
+
+  *In your own words, write instructions to fork, clone and update a repository.*
+
+    Forking a repository is very similar to cloning one, however you do not "own" the original repository. Furthermore, forking a repository to your GitHub account makes a distinct copy of the code. Once you've cloned the code to your local machine, any modifications you make to the code after forking it are confined to your forked version of the code; the updates do not affect the original repository from which you forked the code.
+
+
+  *What is a pull request and how do you create and merge one?*
+
+    A pull request is like saying, "I want some code 'X' to be part of code base 'Y'. It can work in two ways. First, a developer can "git pull" the most up-to-date version of the shared code base down to her local machine. This ensures she's working with the latest code. A second scenario is when a developer has made changes on her local machine (changes are made on a branch) and the developer makes a pull request to say to the team, "Please review this code for quality because I'd it to be merged into the master code base." If a developer is working on her own in a branch, she would stage her code, commit it, then she would leave the branch and checkout the "origin/master" code. Next she'd "git pull [branchname]" and then git merge [branchname].
+
+    For the second scenario, the easiest way to merge branch code into master is through the GitHub UI. With her branch selected on GitHub, the developer would click "Pull Request". This would leave the code to be reviewed by another team member before being merged into master.
+
+    A merge conflict keeps the two code streams from being combined because of a direct conflict between corresponding lines of code. These conflicts cannot be resolved by a computer program and require the developer's decision making.
+
+  *Why are pull requests preferred when working with teams?*
+
+    Pull requests allow teams to check teammates' code as form of quality control.
