@@ -12,3 +12,7 @@ margin: 20px;
 .skills {
   font-size: .8em
 }
+
+ul > li {
+  color: blue
+}
