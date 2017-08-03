@@ -1,5 +1,27 @@
 
-body {font-size: 100%;}
+body {
+    font-size: 100%;
+    max-width: 100%;
+    }
+
+#side-a {
+    width: 20%;
+}
+
+/*#container {
+  display: block;
+  vertical-align: -25px;
+}*/
+
+/*#container, #content {
+  display: block;
+  vertical-align: -25px;
+
+}*/
+
+#content {
+    width: 75%;
+}
 .sidebar {background: red;}
 .flowers {font-size:2em;
           color: white;
