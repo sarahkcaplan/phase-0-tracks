@@ -1,13 +1,23 @@
-#hat {
-
-}
-
-#glasses{
-
-
+.beautiful{
+  margin: 100px auto;
 }
 
 #octopus{
-
-
+  position: fixed;
+  z-index: -1;
 }
+
+#hat {
+  position: relative;
+  top: -70px;
+  left: 400px;
+}
+
+#glasses{
+  position: relative;
+  left: 175px;
+  top: -5px
+}
+
+
+
