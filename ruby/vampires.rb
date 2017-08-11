@@ -26,14 +26,14 @@ else
 end
 
 current_year = 2017
-p current_year
-p year
-p age
 
-# def age_right(current_year, year, age)
-#   calc_age = (current_year - year)
-#   if calc_age == age
-#   end
-# end
+def age_right(current_year, year, age)
+  calc_age = (current_year - year)
+  if calc_age == age
+    age_right = true
+  else
+    age_right = false
+  end
+end
 
-# age_right(current_year, year, age)
+p age_right(current_year, year, age)
