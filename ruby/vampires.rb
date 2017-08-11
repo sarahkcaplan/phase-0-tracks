@@ -1,8 +1,9 @@
 puts "How many employees today?"
 employees = gets.chomp
 employees = employees.to_i
+vampire == false
 
-while employees >= 1
+while employees >= 1 && vampire = false
 
   puts "What is your name?"
   name = gets.chomp
@@ -37,6 +38,7 @@ while employees >= 1
     puts "Please enter additional allergies."
     allergy = gets.chomp
     if allergy == 'sunshine'
+      vampire = true
       puts "Probably a vampire"
       break
     end
