@@ -1,0 +1,18 @@
+- Note the “start floor”
+- Note the “final floor”
+- Subtract “final floor” from “start floor”:
+	- If result is positive:
+		- Push the down button outside the elevator
+	- If result is negative:
+		- Push the up button outside the elevator
+	- If the result is “0”:
+		- Stay where you are. You don’t need to use the elevator
+- When the elevator door opens, enter the elevator
+- Locate the number for “final floor” on the wall
+- Push the button corresponding to “final floor”
+- The elevator door closes and you wait
+- When the elevator stops and the door opens, note the “current floor”:
+	- If the “current floor” does not equal “final floor”:
+		- Stay on the elevator
+	- Otherwise:
+		- Exit the elevator
