@@ -40,14 +40,14 @@ end
 
 age_right(current_year, year, age)
 
-if age_right(current_year, year, age) && garlic && insurance
+if name = "Drake Cula" || "Tu Fang"
+  puts "Definitely a vampire."
+elsif age_right(current_year, year, age) && garlic && insurance
   puts "Probably not a vampire."
 elsif !(age_right(current_year, year, age)) && (garlic || insurance)
   puts "Probably a vampire."
 elsif !(age_right(current_year, year, age) &&  garlic && insurance)
   puts "Almost certainly a vampire."
-elsif name = "Drake Cula" || "Tu Fang"
-  puts "Definitely a vampire."
 else
   puts "Results inconclusive"
 end
