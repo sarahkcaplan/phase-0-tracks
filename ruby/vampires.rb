@@ -3,11 +3,11 @@ name = gets.chomp
 
 puts "How old are you?"
 age = gets.chomp
-age = age.to_i
+
 
 puts "What year were you born?"
 year = gets.chomp
-year = year.to_i
+
 
 puts "Would you like garlic bread?"
 garlic = gets.chomp
@@ -26,6 +26,8 @@ else
 end
 
 current_year = 2017
+year = year.to_i
+age = age.to_i
 
 def age_right(current_year, year, age)
   calc_age = (current_year - year)
@@ -36,13 +38,7 @@ def age_right(current_year, year, age)
   end
 end
 
-p current_year
-p year
-p age
-
 age_right(current_year, year, age)
-p age_right
-
 
 if age_right && garlic && insurance
   puts "Probably not a vampire."
