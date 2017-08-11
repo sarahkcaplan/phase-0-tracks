@@ -1,3 +1,4 @@
+Release 0:
 - Note the “start floor”
 - Note the “final floor”
 - Subtract “final floor” from “start floor”:
@@ -16,3 +17,17 @@
 		- Stay on the elevator
 	- Otherwise:
 		- Exit the elevator
+
+
+Release 1:
+Set the alarm clock
+
+- Get in bed
+- Ask, “What day is tomorrow?”
+	- If weekday and not a holiday:
+		- Set alarm for 6am
+	- If weekday and a holiday:
+		- Set alarm for 10am
+	- If weekend:
+		- Set alarm for 10am
+- Go to sleep
