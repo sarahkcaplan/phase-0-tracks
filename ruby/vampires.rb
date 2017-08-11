@@ -38,6 +38,8 @@ while employees >= 1
     allergy = gets.chomp
     if allergy == 'sunshine'
       puts "Probably a vampire"
+      break
+    end
   end
 
   current_year = 2017
@@ -53,7 +55,7 @@ while employees >= 1
 
   age_right(current_year, year, age)
 
-  elsif name == "Drake Cula"
+  if name == "Drake Cula"
     puts "Definitely a vampire."
   elsif name == "Tu Fang"
     puts "Definitely a vampire."
