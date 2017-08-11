@@ -11,7 +11,7 @@ year = year.to_i
 
 puts "Would you like garlic bread?"
 garlic = gets.chomp
-if garlic = 'y' || 'Y' || 'yes'
+if garlic = 'y' || 'Y' || 'yes' || 'Yes'
   garlic = true
 else
   garlic = false
@@ -19,7 +19,7 @@ end
 
 puts "Would you like to enroll in the company health insurance?"
 insurance = gets.chomp
-if insurance = 'y' || 'Y' || 'yes'
+if insurance = 'y' || 'Y' || 'yes' || 'Yes'
   insurance = true
 else
   insurance = false
@@ -36,7 +36,17 @@ def age_right(current_year, year, age)
   end
 end
 
-vampire = true
+age_right(current_year, year, age)
 
-if age && garlic && insurance
-  puts "Probaby a vampire"
+if age_right && garlic && insurance
+  puts "Probably not a vampire."
+elsif !(age_right) && !(garlic || insurance)
+  puts "Probably a vampire."
+elsif !(age_right && garlic && insurance)
+  puts "Almost certainly a vampire."
+elsif name = "Drake Cula" || "Tu Fang"
+  puts "Definitely a vampire."
+else
+  puts "Results inconclusive"
+end
+
