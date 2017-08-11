@@ -31,14 +31,14 @@ while employees >= 1
     insurance = false
   end
 
-  put "Please enter allergies (one at a time). Enter 'done' when finished."
+  puts "Please enter allergies (one at a time). Enter 'done' when finished."
   allergy = gets.chomp
   until allergy == 'done'
-    put "Please enter additional allergies."
+    puts "Please enter additional allergies."
     allergy = gets.chomp
+    if allergy == 'sunshine'
+      puts "Probably a vampire"
   end
-
-
 
   current_year = 2017
 
@@ -53,7 +53,7 @@ while employees >= 1
 
   age_right(current_year, year, age)
 
-  if name == "Drake Cula"
+  elsif name == "Drake Cula"
     puts "Definitely a vampire."
   elsif name == "Tu Fang"
     puts "Definitely a vampire."
