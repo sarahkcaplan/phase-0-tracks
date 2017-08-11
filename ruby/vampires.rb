@@ -1,9 +1,9 @@
 puts "How many employees today?"
 employees = gets.chomp
 employees = employees.to_i
-vampire == false
+vampire = false
 
-while employees >= 1 && vampire = false
+while employees >= 1 && vampire == false
 
   puts "What is your name?"
   name = gets.chomp
@@ -34,7 +34,7 @@ while employees >= 1 && vampire = false
 
   puts "Please enter allergies (one at a time). Enter 'done' when finished."
   allergy = gets.chomp
-  until allergy == 'done'
+  until allergy == 'done' do
     puts "Please enter additional allergies."
     allergy = gets.chomp
     if allergy == 'sunshine'
@@ -55,20 +55,20 @@ while employees >= 1 && vampire = false
     end
   end
 
-  age_right(current_year, year, age)
-
-  if name == "Drake Cula"
-    puts "Definitely a vampire."
-  elsif name == "Tu Fang"
-    puts "Definitely a vampire."
-  elsif age_right(current_year, year, age) && garlic && insurance
-    puts "Probably not a vampire."
-  elsif !(age_right(current_year, year, age)) && (garlic || insurance)
-    puts "Probably a vampire."
-  elsif !(age_right(current_year, year, age) &&  garlic && insurance)
-    puts "Almost certainly a vampire."
-  else
-    puts "Results inconclusive"
+  if vampire == false
+    if name == "Drake Cula"
+      puts "Definitely a vampire."
+    elsif name == "Tu Fang"
+      puts "Definitely a vampire."
+    elsif age_right(current_year, year, age) && garlic && insurance
+      puts "Probably not a vampire."
+    elsif !(age_right(current_year, year, age)) && (garlic || insurance)
+      puts "Probably a vampire."
+    elsif !(age_right(current_year, year, age) &&  garlic && insurance)
+      puts "Almost certainly a vampire."
+    else
+      puts "Results inconclusive"
+    end
   end
 
   employees -= 1
