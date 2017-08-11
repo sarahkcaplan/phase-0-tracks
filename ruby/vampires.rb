@@ -36,7 +36,13 @@ def age_right(current_year, year, age)
   end
 end
 
+p current_year
+p year
+p age
+
 age_right(current_year, year, age)
+p age_right
+
 
 if age_right && garlic && insurance
   puts "Probably not a vampire."
