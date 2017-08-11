@@ -3,10 +3,12 @@ name = gets.chomp
 
 puts "How old are you?"
 age = gets.chomp
+age = age.to_i
 
 
 puts "What year were you born?"
 year = gets.chomp
+year = year.to_i
 
 
 puts "Would you like garlic bread?"
@@ -26,8 +28,6 @@ else
 end
 
 current_year = 2017
-year = year.to_i
-age = age.to_i
 
 def age_right(current_year, year, age)
   calc_age = (current_year - year)
@@ -40,11 +40,11 @@ end
 
 age_right(current_year, year, age)
 
-if age_right && garlic && insurance
+if age_right(current_year, year, age) && garlic && insurance
   puts "Probably not a vampire."
-elsif !(age_right) && !(garlic || insurance)
+elsif !(age_right(current_year, year, age)) && (garlic || insurance)
   puts "Probably a vampire."
-elsif !(age_right && garlic && insurance)
+elsif !(age_right(current_year, year, age) &&  garlic && insurance)
   puts "Almost certainly a vampire."
 elsif name = "Drake Cula" || "Tu Fang"
   puts "Definitely a vampire."
