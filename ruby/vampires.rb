@@ -22,7 +22,7 @@ insurance = gets.chomp
 if insurance = 'y' || 'Y' || 'yes'
   insurance = true
 else
-  insurace = false
+  insurance = false
 end
 
 current_year = 2017
@@ -36,4 +36,7 @@ def age_right(current_year, year, age)
   end
 end
 
-p age_right(current_year, year, age)
+vampire = true
+
+if age && garlic && insurance
+  puts "Probaby a vampire"
