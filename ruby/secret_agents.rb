@@ -14,30 +14,39 @@
 #   -Subtract 1 from that index. Save this new index
 #   -Return to the input word and replace the character at index 0 with the letter at the new index within the list of letters
 
-# def encrypt(word)
-#   counter = 0
-#   secret_password = ''
-#   while counter < word.length
-#     character = word[counter].next
-#     secret_password += character
-#     counter += 1
-#   end
-#   puts secret_password
-# end
+def encrypt(word)
+  counter = 0
+  secret_password = ''
+  while counter < word.length
+    character = word[counter].next
+    secret_password += character
+    counter += 1
+  end
+  puts secret_password
+end
 
-# puts encrypt("sarah")
-
-def decrypt(word, alphabet)
+def decrypt(word)
   counter = 0
   secret_password = ''
   while counter < word.length
     character = word[counter]
-    letter_index = alphabet.index(character)
-    new_character = alphabet[letter_index -1]
+    letter_index = "abcdefghijklmnopqrstuvwxyz".index(character)
+    new_character = "abcdefghijklmnopqrstuvwxyz"[letter_index -1]
     secret_password += new_character
     counter += 1
   end
   puts secret_password
 end
 
-puts decrypt("tbsbi","abcdefghijklmnopqrstuvwxyz")
+# puts decrypt(encrypt("swordfish"))
+# #Note: could not get release 4 to pass
+
+puts "Would you like to encrypt or decrypt a password? (encrypt/decrypt)"
+request = gets.chomp
+puts "What is the password?"
+password = gets.chomp
+if request == "encrypt"
+  puts encrypt(password)
+else request == "decrypt"
+  puts decrypt(password)
+end
