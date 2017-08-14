@@ -14,18 +14,29 @@
 #   -Subtract 1 from that index. Save this new index
 #   -Return to the input word and replace the character at index 0 with the letter at the new index within the list of letters
 
-def encrypt(word)
+# def encrypt(word)
+#   counter = 0
+#   secret_password = ''
+#   while counter < word.length
+#     character = word[counter].next
+#     secret_password += character
+#     counter += 1
+#   end
+#   puts secret_password
+# end
+
+# puts encrypt("sarah")
+
+def decrypt(word, alphabet)
   counter = 0
   secret_password = ''
   while counter < word.length
-    character = word[counter].next
+    character = word[counter]
+    index = alaphabed.index(character)
+    character = alphabet[index -1]
     secret_password += character
-    counter += 1
   end
   puts secret_password
 end
 
-puts encrypt("sarah")
-
-
-# def decrypt(word, alphabet)
+puts decrypt("tbsbi", "abcdefghijklmnopqrstuvwxyz")
