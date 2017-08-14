@@ -32,11 +32,12 @@ def decrypt(word, alphabet)
   secret_password = ''
   while counter < word.length
     character = word[counter]
-    index = alaphabed.index(character)
-    character = alphabet[index -1]
-    secret_password += character
+    letter_index = alphabet.index(character)
+    new_character = alphabet[letter_index -1]
+    secret_password += new_character
+    counter += 1
   end
   puts secret_password
 end
 
-puts decrypt("tbsbi", "abcdefghijklmnopqrstuvwxyz")
+puts decrypt("tbsbi","abcdefghijklmnopqrstuvwxyz")
