@@ -1,17 +1,19 @@
 puts "Client's name:"
-name = chomps.get
+name = gets.chomp
 
 puts "Client's age:"
-age = chomps.get
+age = gets.to_i
 
 puts "Have children?(true/false):"
-children = chomps.get
+children = gets.to_i
 
 puts "Decore theme:"
-theme = chomps.get
+theme = gets.chomp
 
 puts "Color scheme:"
-colors = chomps.get
+colors = gets.to_a
+puts.colors
+puts colors.class
 
 
 
