@@ -3,17 +3,25 @@ name = gets.chomp
 
 puts "Client's age:"
 age = gets.to_i
+puts age.class
 
 puts "Have children?(true/false):"
-children = gets.to_i
+children = gets.chomp
+  if children = "true"
+    children = true
+  else children = "false"
+    children = false
+  end
+puts children.class
 
 puts "Decore theme:"
 theme = gets.chomp
 
 puts "Color scheme:"
-colors = gets.to_a
-puts.colors
+colors = gets.chomp
+
 puts colors.class
+p colors
 
 
 
