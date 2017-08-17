@@ -1,4 +1,17 @@
+puts "Client's name:"
+name = chomps.get
 
+puts "Client's age:"
+age = chomps.get
+
+puts "Have children?(true/false):"
+children = chomps.get
+
+puts "Decore theme:"
+theme = chomps.get
+
+puts "Color scheme:"
+colors = chomps.get
 
 
 
