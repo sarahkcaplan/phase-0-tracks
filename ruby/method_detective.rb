@@ -4,10 +4,11 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+"iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+"zom".replace("zoom")
+"zom".tr("o", "oo")
 # => “zoom”
 
 "enhance".center(15)
@@ -17,6 +18,8 @@
 # => "STOP! YOU’RE UNDER ARREST!"
 
 # "the usual".<???>
+"the usual" + " suspects"
+"the usual" << " suspects"
 #=> "the usual suspects"
 
 " suspects".prepend("the usual")
@@ -25,13 +28,13 @@
 "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter".slice(1..-1)
 # => "he mystery of the missing first letter"
 
 "Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+"z".ord
 # => 122
 # (What is the significance of the number 122 in relation to the character z?)
 
