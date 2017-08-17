@@ -19,7 +19,7 @@
 # "the usual".<???>
 #=> "the usual suspects"
 
-# " suspects".<???>
+" suspects".prepend("the usual")
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
@@ -28,7 +28,7 @@
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
 
-"Elementary,    my   dear        Watson!".center(27)
+"Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
 # "z".<???>
