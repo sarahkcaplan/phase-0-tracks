@@ -7,9 +7,9 @@ puts age.class
 
 puts "Have children?(true/false):"
 children = gets.chomp
-  if children = "true"
+  if children == "true"
     children = true
-  else children = "false"
+  else children == "false"
     children = false
   end
 puts children.class
@@ -17,11 +17,10 @@ puts children.class
 puts "Decore theme:"
 theme = gets.chomp
 
-puts "Color scheme:"
-colors = gets.chomp
+client = {client_name: name, client_age: age, has_child: children, decore_theme: theme}
 
-puts colors.class
-p colors
+puts client
+p client
 
 
 
