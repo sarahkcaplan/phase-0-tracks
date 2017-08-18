@@ -1,3 +1,4 @@
+# Client questions
 puts "Client's name:"
 name = gets.chomp
 
@@ -14,14 +15,23 @@ children = gets.chomp
   end
 puts children.class
 
-puts "Decore theme:"
+puts "Decor theme:"
 theme = gets.chomp
 
-client = {client_name: name, client_age: age, has_child: children, decore_theme: theme}
-
+# Print hash for designer to see
+client = {client_name: name, client_age: age, has_child: children, decor_theme: theme}
 puts client
-p client
 
+puts "Anything you'd like to change?"
+response = gets.chomp
+if response == "none"
+  puts client
+else
+  response
+  # take response
+  # turn it into usable for a key
+  # update value with a new value entered by user
+end
 
 
 
