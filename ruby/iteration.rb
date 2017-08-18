@@ -1,6 +1,6 @@
 def hungry
   puts "Are you hungry?"
-  yield
+  yield ("eggs")
 end
 
-hungry { puts "Same here."}
+hungry { |food| puts "Same here. I want to eat #{food}"}
