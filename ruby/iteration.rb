@@ -57,10 +57,18 @@
 # puts "After filter"
 # p array3
 
-array4 = ['yes', 'no', 'maybe']
-puts "Before filter"
-p array4
+# array4 = ['yes', 'no', 'maybe']
+# puts "Before filter"
+# p array4
 
-array4.include?("no")
-puts "After filter"
-p array4
+# array5 = array4.include?("no")
+# puts "After filter"
+# p array5
+
+array6 = ['sky', 'sky', 'wind', 'earth', 'sky']
+puts "Before loop"
+p array6
+
+array7 = array8.drop_while{|item| item != 'sky'}
+puts "After loop"
+p array 7
