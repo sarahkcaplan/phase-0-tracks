@@ -9,8 +9,9 @@ travel = {
       "attraction" => "beach",
       "food" => "ramen",
       "transportation" => "car"},
-    "SF",
-    "ABQ"],
+    "SF" => "never been",
+    "ABQ" => "lived here"
+    },
   "South Africa":
       ["JNB"]
 }
