@@ -3,7 +3,7 @@ travel = {
     "NYC": {
       "attraction" => "Empire State Building",
       "food"=> "Bao Haus",
-      "transportation" => "subway"
+      "transportation": ["subway", "car", "buses"]
       },
     "LA": {
       "attraction" => "beach",
@@ -12,8 +12,10 @@ travel = {
     "SF" => "never been",
     "ABQ" => "lived here"
     },
-  "South Africa":
-      ["JNB"]
+  "South_Africa": {
+    "cities": ["Johannesburg", "Victoria", "Port Elizabeth"]
+  }
 }
 
-travel[:USA][1][:transportation]
+p travel[:USA][:NYC][:transportation][2]
+p travel[:South_Africa][:cities][0]
