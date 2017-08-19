@@ -28,6 +28,8 @@ if response == "none"
   puts client
 else
   response
+## TODO
+ ## I'm really not sure how to do this part
   # take response
   # turn it into usable for a key
   # update value with a new value entered by user
