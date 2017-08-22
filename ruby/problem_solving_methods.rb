@@ -23,17 +23,20 @@ def fib(x)
   array = [0,1]
   index = 0
   until array.length == x
-    n1 = index
-    n2 = index + 1
+    n1 = array[index]
+    n2 = array[index + 1]
     n3 = n1 + n2
     array.push(n3)
     index += 1
   end
-  puts array
-  puts array.last
+  last = array.pop
+  puts last
+  if last == 218922995834555169026
+    puts "SUCCESS"
+  end
 end
 
-fib(5)
+fib(100)
 
 # # PSEUDOCODE
 # array[0] + array[1] = array[2]
