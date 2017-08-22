@@ -11,5 +11,11 @@ last_first = name_array.reverse
 last = last_first[0].chars
 first = last_first[1].chars
 scrambled_last = []
+scrambled_first = []
+scrambled_name = []
 last.each {|l| scrambled_last << l.next}
-first.each {|l| puts l.next}
+first.each {|l| scrambled_first << l.next}
+scrambled_name << scrambled_last
+puts scrambled_name
+scrambled_name << scrambled_first
+puts scrambled_name.class
