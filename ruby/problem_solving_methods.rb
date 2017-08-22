@@ -46,46 +46,38 @@
 # # print array.last
 
 # # Release 2
-# def bub_sort(array)
-#   p "1"
-#   index = 0
-#   item = 0
-#   p "2"
-#   while index < array.length
-#     p "3"
-#     first = array[index]
-#     second = array[index+1]
-#       if first > second
-#         p first
-#         p second
-#         low = array[index+1]
-#         high = array[index]
-#         p low
-#         p high
-#         array[index] = low
-#         array[index+1] = high
-#         p array
-#         index += 1
-#         break
-#       else
-#         index += 1
-#       end
-#   end
-# end
-
-# bub_sort([3,6,1,8,4,2])
-
-def funky_town(array)
+def bub_sort(array)
   l = 1
   pairs = 0
   while l != array.length
     pairs += (array.length-l)
     l += 1
-    p pairs
+  end
+  count = 0
+  while count < pairs
+      index = 0
+      n = 0
+      while index < array.length - n
+        if array[index] > array[index+1]
+          low = array[index+1]
+          high = array[index]
+          array[index] = low
+          array[index+1] = high
+          index += 1
+          count += 1
+        else
+          index += 1
+          count += 1
+        end
+      end
+      n += 1
+      puts array
+
   end
 end
 
-funky_town([1,2,3,4,5,6,7,8,9,10,11,12])
+bub_sort([3,6,1,8,4,2])
+
 
 # #PSEUDOCODE
 # (buble sort)
@@ -99,3 +91,16 @@ funky_town([1,2,3,4,5,6,7,8,9,10,11,12])
 # -Start from the beginning of the array and follow steps 2-5 until the number in the "second position" is -2 position is considered sorted (-1-1).
 # -Follow steps 2-7 until the numbers in position 0 and 1 are considered sorted.
 
+#PSEUDOCODE attempt # 2
+#Counted total pairs of array length = l and found that the total number of pairs = (l-1)+(l-2)+(l-3)+(l-4) and so on until the integer was the same as the length of the array
+
+# in code this is:
+# def pair_count(array)
+#   l = 1
+#   pairs = 0
+#   while l != array.length
+#     pairs += (array.length-l)
+#     l += 1
+#   end
+#   return pairs
+# end
