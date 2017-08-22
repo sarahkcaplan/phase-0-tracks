@@ -48,16 +48,22 @@
 # Release 2
 def bub_sort(array)
   index = 0
-  item = 0
-  end_sort = array.length * -1
-  until index == end_sort
-    if array[item] > array[item+1]
+  while index < array.length
+    first = array[0]
+    second = array[1]
+    if first > second
+      p first
+      p second
       low = array[item+1]
       high = array[item]
+      p low
+      p high
       array[item] = low
       array[item+1] = high
-      item += 1
+      p array
+      index += 1
       index -= 1
+      break
     else
       item += 1
       index -= 1
@@ -65,6 +71,7 @@ def bub_sort(array)
   end
 end
 
+bub_sort([3,6,1,8,4,2])
 
 
 # #PSEUDOCODE
