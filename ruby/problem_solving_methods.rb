@@ -45,34 +45,47 @@
 # # until array.length = x
 # # print array.last
 
-# Release 2
-def bub_sort(array)
-  index = 0
-  while index < array.length
-    first = array[0]
-    second = array[1]
-    if first > second
-      p first
-      p second
-      low = array[item+1]
-      high = array[item]
-      p low
-      p high
-      array[item] = low
-      array[item+1] = high
-      p array
-      index += 1
-      index -= 1
-      break
-    else
-      item += 1
-      index -= 1
-    end
+# # Release 2
+# def bub_sort(array)
+#   p "1"
+#   index = 0
+#   item = 0
+#   p "2"
+#   while index < array.length
+#     p "3"
+#     first = array[index]
+#     second = array[index+1]
+#       if first > second
+#         p first
+#         p second
+#         low = array[index+1]
+#         high = array[index]
+#         p low
+#         p high
+#         array[index] = low
+#         array[index+1] = high
+#         p array
+#         index += 1
+#         break
+#       else
+#         index += 1
+#       end
+#   end
+# end
+
+# bub_sort([3,6,1,8,4,2])
+
+def funky_town(array)
+  l = 1
+  pairs = 0
+  while l != array.length
+    pairs += (array.length-l)
+    l += 1
+    p pairs
   end
 end
 
-bub_sort([3,6,1,8,4,2])
-
+funky_town([1,2,3,4,5,6,7,8,9,10,11,12])
 
 # #PSEUDOCODE
 # (buble sort)
@@ -85,3 +98,4 @@ bub_sort([3,6,1,8,4,2])
 # -Continue along the array until the number in the -1st position is considered and sorted.
 # -Start from the beginning of the array and follow steps 2-5 until the number in the "second position" is -2 position is considered sorted (-1-1).
 # -Follow steps 2-7 until the numbers in position 0 and 1 are considered sorted.
+
