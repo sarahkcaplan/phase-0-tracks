@@ -46,6 +46,25 @@
 # # print array.last
 
 # Release 2
+def bub_sort(array)
+  index = 0
+  item = 0
+  end_sort = array.length * -1
+  until index == end_sort
+    if array[item] > array[item+1]
+      low = array[item+1]
+      high = array[item]
+      array[item] = low
+      array[item+1] = high
+      item += 1
+      index -= 1
+    else
+      item += 1
+      index -= 1
+    end
+  end
+end
+
 
 
 # #PSEUDOCODE
