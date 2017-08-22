@@ -7,4 +7,9 @@
 
 real_name = "Felicia Torres"
 name_array = real_name.split(' ')
-p name_letters = name_array.reverse.split('')
+last_first = name_array.reverse
+last = last_first[0].chars
+first = last_first[1].chars
+scrambled_last = []
+last.each {|l| scrambled_last << l.next}
+first.each {|l| puts l.next}
