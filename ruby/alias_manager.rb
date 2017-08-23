@@ -8,9 +8,9 @@
 def name_scramble()
   real_name = ""
   agent_list = []
+  puts "Please enter a name."
+  real_name = gets.chomp
   if real_name != "quit"
-    puts "Please enter a name."
-    real_name = gets.chomp
     name_array = real_name.split(' ')
     last_first = name_array.reverse
     last = last_first[0].chars
@@ -26,30 +26,24 @@ def name_scramble()
     scrambled_first.each {|l| first_string += l}
     agent_name = last_string + " " +first_string
     an_agent = {agent_name => real_name}
-    agent_list.insert(-1, an_agent)
-  elsif real_name == "quit"
-    puts "Ok...done."
-    return agent_list
+    puts an_agent
+    agent_list << agent_name
   else
-    puts "Did not understand imput."
+    return agent_list
   end
 end
 
+def use_scrambler()
+  real_name = ""
+  while real_name != "quit"
+    puts name_scramble()
+  end
+end
 
-
-# def use_scrambler()
-#   real_name = ""
-#   agent_history = []
-#   while real_name != "quit"
-#     an_agent = name_scramble()
-#     puts an_agent
-#   end
-# end
-
-# puts use_scrambler()
+puts use_scrambler()
 
 # def store_agent_name()
-#   list_of_agents = []
+
 #   index = 0
 #   while index <
 #     list_of_agents << name_scramble()
