@@ -12,7 +12,7 @@ class Santa
   end
 
   def get_mad_at(reindeer_name)
-    @reindeer_ranking.insert(-1, reindeer_name)
+    @reindeer_ranking =reindeer_ranking.insert(-1, reindeer_name)
   end
 
   def gender=(new_gender)
