@@ -22,13 +22,17 @@ def name_scramble()
   scrambled_last.each {|l| last_string += l}
   scrambled_first.each {|l| first_string += l}
   agent_name = last_string + " " +first_string
-  return an_agent = {agent_name: real_name}
+  return an_agent = {agent_name => real_name}
 end
 
 
 def store_agent_name()
   list_of_agents = []
-  list_of_agents << name_scramble()
+  index = 0
+  while index < 3
+    list_of_agents << name_scramble()
+    index += 1
+  end
   return list_of_agents
 end
 
