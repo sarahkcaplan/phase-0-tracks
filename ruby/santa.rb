@@ -15,11 +15,21 @@ class Santa
   def eat_milk_and_cookies(cookie)
     puts "That was a good #{cookie} cookie!"
   end
-
-
 end
 
-our_santa = Santa.new
-our_santa.speak
-our_santa.eat_milk_and_cookies("chocolate")
-our_santa.initialize
+# our_santa = Santa.new
+# our_santa.speak
+# our_santa.eat_milk_and_cookies("chocolate")
+# our_santa.initialize
+
+
+billie = Santa.new("female", "Jewish")
+john = Santa.new("male", "black")
+sarah = Santa.new("white", "female")
+
+santas = []
+santas << billie
+santas << john
+santas << sarah
+
+santas.each {|santa| puts "Meet our new santa: #{santa}"}
