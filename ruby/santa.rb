@@ -5,7 +5,26 @@ class Santa
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
+  end
 
+  def age_santa()
+    @age += 1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.insert(-1, reindeer_name)
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ehtnicity
+    @ethnicity
   end
 
   def speak()
@@ -33,3 +52,8 @@ santas << john
 santas << sarah
 
 santas.each {|santa| puts "Meet our new santa: #{santa}"}
+
+## Prints out:
+# Meet our new santa: #<Santa:0x007fc9aa0939b0>
+# Meet our new santa: #<Santa:0x007fc9aa0935a0>
+# Meet our new santa: #<Santa:0x007fc9aa0932d0>
