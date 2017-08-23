@@ -60,6 +60,7 @@ fido.dog_name('fido')
 class Snocones
 
   def initialize()
+    puts "I'm a snowcone!"
   end
 
   def melt()
@@ -71,4 +72,16 @@ class Snocones
   end
 end
 
+lots_of_sno = []
 
+5.times do
+  lots_of_sno << Snocones.new
+end
+
+puts lots_of_sno
+
+
+lots_of_sno.each do |cone|
+  cone.melt
+  cone.flavor("cherry")
+end
