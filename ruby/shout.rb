@@ -1,10 +1,17 @@
 module Shout
-  def self.yell_angrily(words)
+  def yell_angrily(words)
     words + "!!!" + ":("
   end
 
-  def self.yell_happily(words)
+  def yell_happily(words)
     words + " yippeeee!!"
+  end
 end
 
-puts self.yell_happily("I got it!") end
+
+Class Sarah
+  include Shout
+end
+
+a_sarah = Sarah.new
+a_sarah.yell_happily("Tralalala!")
