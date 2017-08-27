@@ -10,4 +10,8 @@ describe Game do
   it "gives guesses equal to the length of the word plus 3" do
     expect(game.guesses_allowed(['b','a','l','d','h','a','w','k'])).to eq 11
   end
+
+  it "stores guessed letters" do
+    expect(game.letters_guessed('y')).to eq ['y']
+  end
 end
