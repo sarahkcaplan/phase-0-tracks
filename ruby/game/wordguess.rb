@@ -8,7 +8,7 @@ attr_accessor :word
 
   def game_word()
     letters_of_word = []
-    letters_of_word << @word.split('')
+    letters_of_word += @word.split('')
   end
 
   def guesses_allowed(letters_of_word)
@@ -26,15 +26,15 @@ attr_accessor :word
 
   def find_replace_letters(letters_of_word, guess)
     progress = Array.new(letters_of_word.length, '_')
-    letters_of_word.each do |letter|
       if letter == guess
-        index = letters_of_word.index(letter)
+        index = letters_of_word.each_index
+        p index
         progress[index] = guess
       end
     end
-    progress.to_s
+    progress.join('')
   end
 end
 
 test_game = Game.new('hawk')
-puts test_game.find_replace_letters(['h','a','w','k'], 'h')
+puts test_game.find_replace_letters(['h','a','w','k','a'], 'a')
