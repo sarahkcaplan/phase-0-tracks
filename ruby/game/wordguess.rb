@@ -26,15 +26,38 @@ attr_accessor :word
 
   def find_replace_letters(letters_of_word, guess)
     progress = Array.new(letters_of_word.length, '_')
-      if letter == guess
-        index = letters_of_word.each_index
-        p index
-        progress[index] = guess
+      letters_of_word.each do |letter|
+        if letter == guess
+          index = letters_of_word.index(letter)
+          progress[index] = guess
+        end
       end
-    end
     progress.join('')
   end
 end
 
-test_game = Game.new('hawk')
-puts test_game.find_replace_letters(['h','a','w','k','a'], 'a')
+# Driver code
+puts "Welcome! Let's play."
+puts "Enter a word."
+word = gets.chomp
+wordguess = Game.new(word)
+letters_of_word = wordguess.game_word()
+guesses_allowed = wordguess.guesses_allowed(letters_of_word)
+puts "Guess a letter."
+letter = gets.chomp
+letters_guessed = wordguess.letters_guessed(letter)
+count = 0
+progress = Array.new(letters_of_word.length, '_').join('_')
+while count < guesses_allowed && word != progress
+  puts "Guess a letter."
+  letter = gets.chomp
+  if wordguess.compare_guess_to_word(letters_of_word, letter) == true
+    puts "Got one!"
+    count += 1
+  else
+    puts "Nope. Pick another."
+    count += 1
+  end
+  wordguess.find_replace_letters(letters_of_word, letter)
+  progress = wordguess.find_replace_letters(letters_of_word, letter)
+end
