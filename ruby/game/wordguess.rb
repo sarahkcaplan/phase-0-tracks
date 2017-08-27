@@ -1,13 +1,18 @@
 class Game
 
-  def initialize()
-    puts "Welcome! Let's play."
+attr_accessor :word
+
+  def initialize(word)
+    @word = word
   end
 
-  def game_word()
+  def letters_of_word()
+    letters_of_word = []
+    letters_of_word += @word.split('')
   end
 
-  def guesses_allowed()
+  def guesses_allowed(letters_of_word)
+    letters_of_word.length + 3
   end
 
   def letters_guessed()
