@@ -6,7 +6,7 @@ attr_accessor :word
     @word = word
   end
 
-  def letters_of_word()
+  def game_word()
     letters_of_word = []
     letters_of_word += @word.split('')
   end
@@ -18,6 +18,10 @@ attr_accessor :word
   def letters_guessed(letter)
     letters_guessed = []
     letters_guessed.insert(-1, letter)
+  end
+
+  def compare_guess_to_word(letters_of_word, guess)
+    letters_of_word.include?(guess)
   end
 
   def game_progress()
