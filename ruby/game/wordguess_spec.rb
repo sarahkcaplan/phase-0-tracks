@@ -4,7 +4,7 @@ describe Game do
   let(:game) { Game.new("baldhawk") }
 
   it "stores a word for the game on initialization" do
-    expect(game.game_word()).to eq ['b','a','l','d','h','a','w','k']
+    expect(game.game_word()).to eq {'b'=> '_','a'=> '_','l'=> '_','d'=> '_','h'=> '_','a'=> '_','w'=> '_','k'=> '_']
   end
 
   it "gives guesses equal to the length of the word plus 3" do
@@ -21,6 +21,6 @@ describe Game do
   end
 
   it "shows player remaining spaces and correctly guessed letters" do
-    expect(game.game_progress()).to eq "-a---a--"
+    expect(game.find_replace_letters(['h','a','w','k', 'a'], 'a')).to eq "_a__a"
   end
 end
