@@ -15,7 +15,9 @@ attr_accessor :word
     letters_of_word.length + 3
   end
 
-  def letters_guessed()
+  def letters_guessed(letter)
+    letters_guessed = []
+    letters_guessed.insert(-1, letter)
   end
 
   def game_progress()
