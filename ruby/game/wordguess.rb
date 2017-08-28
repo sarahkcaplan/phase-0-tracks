@@ -59,8 +59,7 @@ while count < guesses_allowed && wordguess.word != wordguess.progress
   letter = gets.chomp
   if wordguess.compare_guess_to_word(letter) == true
     puts "Got one!"
-    wordguess.find_replace_letters(letter)
-    puts wordguess.progress
+    puts wordguess.find_replace_letters(letter)
     count += 1
   else
     puts "Nope."
