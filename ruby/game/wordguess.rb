@@ -23,29 +23,22 @@ attr_accessor :word, :progress, :letters_of_word
     letters_guessed.insert(-1, letter)
   end
 
-  def compare_guess_to_word(letters_of_word, guess)
-    p @letters_of_word
-    answer = self.letters_of_word.include?(guess)
+  def compare_guess_to_word(guess)
+    @letters_of_word
+    answer = @letters_of_word.include?(guess)
   end
-end
 
-  def find_replace_letters(letters_of_word, guess)
-    self.progress = Array.new(letters_of_word.length, '_')
-    p self.progress
+  def find_replace_letters(guess)
+    @progress = Array.new(@letters_of_word.length, '_')
     letters_of_word.each do |letter|
-      p letter
-      p guess
       if letter == guess
-        index = letters_of_word.index(letter)
-        p index
-        p self.progress[index]
-        self.progress[index] = guess
-        p self.progress
+        index = @letters_of_word.index(letter)
+        @progress[index] = guess
       else
-        p self.progress
+        @progress
       end
     end
-    self.progress
+    @progress
   end
 end
 
