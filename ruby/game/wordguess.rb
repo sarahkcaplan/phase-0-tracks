@@ -28,12 +28,13 @@ attr_accessor :word, :progress
 
   def find_replace_letters(letters_of_word, guess)
     self.progress = Array.new(letters_of_word.length, '_')
-    puts self.progress
     letters_of_word.each do |letter|
       if letter == guess
         index = letters_of_word.index(letter)
-        progress[index] = guess
-        puts progress
+        self.progress[index] = guess
+        p self.progress.join('')
+      else
+        p self.progress.join('')
       end
     end
   end
