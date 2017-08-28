@@ -60,7 +60,7 @@ guesses_allowed = wordguess.guesses_allowed(letters_of_word)
 count = 0
 while count < guesses_allowed && wordguess.word != wordguess.progress
   puts "Guess a letter."
-  letter = gets.to_s
+  letter = gets.chomp
   if wordguess.compare_guess_to_word(letters_of_word, letter) == true
     puts "Got one!"
     wordguess.find_replace_letters(letters_of_word, letter)
