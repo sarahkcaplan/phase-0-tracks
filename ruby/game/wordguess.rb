@@ -7,37 +7,43 @@ attr_accessor :word, :progress
     @progress = []
   end
 
-  def game_word()
-    letters_of_word = []
-    letters_of_word += self.word.split('')
-    letters_of_word
-  end
+  # def game_word()
+  #   letters_of_word = []
+  #   letters_of_word += self.word.split('')
+  #   letters_of_word
+  # end
 
-  def guesses_allowed(letters_of_word)
-    letters_of_word.length + 3
-  end
+  # def guesses_allowed(letters_of_word)
+  #   letters_of_word.length + 3
+  # end
 
-  def letters_guessed(letter)
-    letters_guessed = []
-    letters_guessed.insert(-1, letter)
-  end
+  # def letters_guessed(letter)
+  #   letters_guessed = []
+  #   letters_guessed.insert(-1, letter)
+  # end
 
-  def compare_guess_to_word(letters_of_word, guess)
-    answer = letters_of_word.include?(guess)
-  end
+  # def compare_guess_to_word(letters_of_word, guess)
+  #   answer = letters_of_word.include?(guess)
+  # end
 
   def find_replace_letters(letters_of_word, guess)
     self.progress = Array.new(letters_of_word.length, '_')
+    p self.progress
     letters_of_word.each do |letter|
+      p letter
+      p guess
       if letter == guess
         index = letters_of_word.index(letter)
+        p index
+        p self.progress[index]
         self.progress[index] = guess
-        p self.progress.join('')
+        p self.progress
       else
-        p self.progress.join('')
+        p self.progress
       end
     end
   end
+  puts self.progress
 end
 
 wordguess = Game.new("hawk")
