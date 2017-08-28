@@ -27,10 +27,8 @@ attr_accessor :word, :progress
   end
 
   def find_replace_letters(letters_of_word, guess)
-    puts self.progress.class
-    puts self.word.class
-    self.progress += ('_' * self.word.length)
-    progress = spaces
+    self.progress = Array.new(letters_of_word.length, '_')
+    puts self.progress
     letters_of_word.each do |letter|
       if letter == guess
         index = letters_of_word.index(letter)
