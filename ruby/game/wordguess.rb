@@ -9,9 +9,9 @@ attr_accessor :word, :progress, :letters_of_word
   end
 
   def game_word()
-    self.letters_of_word = []
-    self.letters_of_word += self.word.split('')
-    self.letters_of_word
+    @letters_of_word = []
+    @letters_of_word += @word.split('')
+    @letters_of_word
   end
 
   def guesses_allowed(letters_of_word)
@@ -24,8 +24,10 @@ attr_accessor :word, :progress, :letters_of_word
   end
 
   def compare_guess_to_word(letters_of_word, guess)
-    answer = letters_of_word.include?(guess)
+    p @letters_of_word
+    answer = self.letters_of_word.include?(guess)
   end
+end
 
   def find_replace_letters(letters_of_word, guess)
     self.progress = Array.new(letters_of_word.length, '_')
@@ -47,8 +49,8 @@ attr_accessor :word, :progress, :letters_of_word
   end
 end
 
-# wordguess = Game.new("hawk")
-# wordguess.find_replace_letters(['h','a','w','k'], 'a')
+# p wordguess = Game.new("hawk")
+# puts wordguess.compare_guess_to_word('a')
 
 
 # # Driver code
