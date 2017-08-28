@@ -7,24 +7,24 @@ attr_accessor :word, :progress
     @progress = []
   end
 
-  # def game_word()
-  #   letters_of_word = []
-  #   letters_of_word += self.word.split('')
-  #   letters_of_word
-  # end
+  def game_word()
+    letters_of_word = []
+    letters_of_word += self.word.split('')
+    letters_of_word
+  end
 
-  # def guesses_allowed(letters_of_word)
-  #   letters_of_word.length + 3
-  # end
+  def guesses_allowed(letters_of_word)
+    letters_of_word.length + 3
+  end
 
-  # def letters_guessed(letter)
-  #   letters_guessed = []
-  #   letters_guessed.insert(-1, letter)
-  # end
+  def letters_guessed(letter)
+    letters_guessed = []
+    letters_guessed.insert(-1, letter)
+  end
 
-  # def compare_guess_to_word(letters_of_word, guess)
-  #   answer = letters_of_word.include?(guess)
-  # end
+  def compare_guess_to_word(letters_of_word, guess)
+    answer = letters_of_word.include?(guess)
+  end
 
   def find_replace_letters(letters_of_word, guess)
     self.progress = Array.new(letters_of_word.length, '_')
@@ -42,12 +42,12 @@ attr_accessor :word, :progress
         p self.progress
       end
     end
+    self.progress
   end
-  puts self.progress
 end
 
-wordguess = Game.new("hawk")
-wordguess.find_replace_letters(['h','a','w','k'], 'a')
+# wordguess = Game.new("hawk")
+# wordguess.find_replace_letters(['h','a','w','k'], 'a')
 
 
 # # Driver code
