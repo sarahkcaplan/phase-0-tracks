@@ -8,7 +8,8 @@ describe Game do
   end
 
   it "gives guesses equal to the length of the word plus 3" do
-    expect(game.guesses_allowed(['h','a','w','k'])).to eq 7
+    game.letters_of_word = ['h','a','w','k']
+    expect(game.guesses_allowed()).to eq 7
   end
 
   it "stores guessed letters" do
@@ -16,11 +17,13 @@ describe Game do
   end
 
   it "checks to see if the user's guess is among the letters of the word" do
-    expect(game.compare_guess_to_word(['h','a','w','k'], 'w')).to eq true
-    expect(game.compare_guess_to_word(['h','a','w','k'], 'x')).to eq false
+    game.letters_of_word = ['h','a','w','k']
+    expect(game.compare_guess_to_word('w')).to eq true
+    expect(game.compare_guess_to_word('x')).to eq false
   end
 
   it "shows player remaining spaces and correctly guessed letters" do
-    expect(game.find_replace_letters(['h','a','w','k'], 'a')).to eq ["_", "a", "_", "_"]
+    game.letters_of_word = ['h','a','w','k']
+    expect(game.find_replace_letters('a')).to eq ["_", "a", "_", "_"]
   end
 end
