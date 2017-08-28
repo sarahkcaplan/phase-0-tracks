@@ -9,9 +9,9 @@ attr_accessor :word, :progress, :letters_of_word
   end
 
   def game_word()
-    letters_of_word = []
-    letters_of_word += self.word.split('')
-    letters_of_word
+    self.letters_of_word = []
+    self.letters_of_word += self.word.split('')
+    self.letters_of_word
   end
 
   def guesses_allowed(letters_of_word)
