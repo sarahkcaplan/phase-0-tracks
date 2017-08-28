@@ -53,7 +53,7 @@ end
 # Driver code
 puts "Welcome! Let's play."
 puts "Enter a word."
-word = gets.chomp
+wordguess.word = gets.chomp
 wordguess = Game.new(word)
 letters_of_word = wordguess.game_word()
 guesses_allowed = wordguess.guesses_allowed(letters_of_word)
