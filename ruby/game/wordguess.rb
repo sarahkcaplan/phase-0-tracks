@@ -1,10 +1,11 @@
 class Game
 
-attr_accessor :word, :progress
+attr_accessor :word, :progress, :letters_of_word
 
   def initialize(word)
     @word = word
     @progress = []
+    @letters_of_word = []
   end
 
   def game_word()
@@ -50,25 +51,25 @@ end
 # wordguess.find_replace_letters(['h','a','w','k'], 'a')
 
 
-# Driver code
-puts "Welcome! Let's play."
-puts "Enter a word."
-wordguess.word = gets.chomp
-wordguess = Game.new(word)
-letters_of_word = wordguess.game_word()
-guesses_allowed = wordguess.guesses_allowed(letters_of_word)
-count = 0
-while count < guesses_allowed && wordguess.word != wordguess.progress
-  puts "Guess a letter."
-  letter = gets.chomp
-  if wordguess.compare_guess_to_word(letters_of_word, letter) == true
-    puts "Got one!"
-    wordguess.find_replace_letters(letters_of_word, letter)
-    puts wordguess.progress
-    count += 1
-  else
-    puts "Nope."
-    count += 1
-    puts wordguess.progress
-  end
-end
+# # Driver code
+# puts "Welcome! Let's play."
+# puts "Enter a word."
+# word = gets.chomp
+# wordguess = Game.new(word)
+# letters_of_word = wordguess.game_word()
+# guesses_allowed = wordguess.guesses_allowed(letters_of_word)
+# count = 0
+# while count < guesses_allowed && wordguess.word != wordguess.progress
+#   puts "Guess a letter."
+#   letter = gets.chomp
+#   if wordguess.compare_guess_to_word(letters_of_word, letter) == true
+#     puts "Got one!"
+#     wordguess.find_replace_letters(letters_of_word, letter)
+#     puts wordguess.progress
+#     count += 1
+#   else
+#     puts "Nope."
+#     count += 1
+#     puts wordguess.progress
+#   end
+# end
