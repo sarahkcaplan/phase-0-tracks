@@ -32,6 +32,8 @@
 // -- Repeat until array is length n
 // output: An array of length n made up of strings
 
+
+// Release 0:
 function longerString(a,b) {
   if (a > b) {
     return a;
@@ -43,11 +45,29 @@ function longerString(a,b) {
 
 function longestString(array, longString) {
   for (i = 0; i < array.length; i++) {
-    console.log("Long string 1", longString)
     var longString = longerString(array[i], longString);
-    console.log("Long string 2", longString);
   }
+  return longString;
 };
 
 testArray = ["aaa", "aa", "a", "aaaa", "aa", "aaaaaa", "a"];
-longestString(testArray, longerString(testArray[0], testArray[1]));
+console.log(longestString(testArray, longerString(testArray[0], testArray[1])));
+
+// Release 1:
+function keyValueMatch(object1, object2) {
+  var object1_keys = Object.keys(object1);
+  var object2_keys = Object.keys(object2);
+  var object1_values = Object.values(object1);
+  var object2_values = Object.values(object2);
+
+  for (i = 0; i < object1_keys.length; i ++){
+    for (m = 0; m < object2_keys.length)
+      if (object1_keys[i] == object2_keys[m]){
+        if (object1_values[i] == object2_values[i]){
+          return true;
+        }
+      else
+        m ++;
+    }
+  }
+};
