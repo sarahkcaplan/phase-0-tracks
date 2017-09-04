@@ -94,9 +94,21 @@ var integer = Math.floor(Math.random()*10);
 return integer;
 }
 
-function testData(n) {
-  var data = [];
+function randomString(random_integer) {
+  var string = "";
+  var letters = "abcdefghijklmnopqrstuvwxyz";
+  for( i = 0; i < random_integer; i++ ){
+        string += letters.charAt(Math.floor(Math.random() * letters.length));
+  }
+  return string;
+};
 
+function createArray(n){
+  var testArray = []
 };
 
 console.log(randInt());
+console.log(randomString(4));
+console.log(randomString(7));
+console.log(randomString(2));
+
