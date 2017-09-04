@@ -53,38 +53,50 @@
 // testArray = ["aaa", "aa", "a", "aaaa", "aa", "aaaaaa", "a"];
 // console.log(longestString(testArray, longerString(testArray[0], testArray[1])));
 
-// Release 1:
-function keyValueMatchInner(object2) {
-  var object2_keys = Object.keys(object2);
-  for (m = 0; m < object2_keys; m++) {
-    return object2_keys[m];
-  }
+// // Release 1:
+// function keyValueMatchInner(object2) {
+//   var object2_keys = Object.keys(object2);
+//   for (m = 0; m < object2_keys; m++) {
+//     return object2_keys[m];
+//   }
+// };
+
+// function keyValueMatch(object1, object2) {
+//   var object1_keys = Object.keys(object1);
+//   var object2_keys = Object.keys(object2);
+
+//   for (i = 0; i < object1_keys.length; i ++){
+//     console.log("i: ", i)
+//     if (object1_keys[0] == object2_keys[i]){
+//       if (object1[object1_keys[0]] == object2[object2_keys[i]]){
+//         break;
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+// };
+
+// testObject1 = {city: "Los Angeles", month: "January", trip: "Business", airline: "United"};
+// testObject2 = {city: "New York", day: "Tuesday", trip: "Fun", airline: "United"};
+
+// console.log(keyValueMatch(testObject1, testObject2));
+
+
+// testObject3 = {city: "Los Angeles", month: "January", trip: "Business", airline: "United"};
+// testObject4 = {city: "New York", day: "Tuesday", trip: "Fun", airline: "American"};
+
+// console.log(keyValueMatch(testObject3, testObject4));
+
+// Release 2
+function randInt(){
+var integer = Math.floor(Math.random()*10);
+return integer;
+}
+
+function testData(n) {
+  var data = [];
+
 };
 
-function keyValueMatch(object1, object2) {
-  var object1_keys = Object.keys(object1);
-  var object2_keys = Object.keys(object2);
-
-  for (i = 0; i < object1_keys.length; i ++){
-    console.log("i: ", i)
-    if (object1_keys[0] == object2_keys[i]){
-      if (object1[object1_keys[0]] == object2[object2_keys[i]]){
-        break;
-        return true;
-      }
-    }
-  }
-  return false;
-};
-
-testObject1 = {city: "Los Angeles", month: "January", trip: "Business", airline: "United"};
-testObject2 = {city: "New York", day: "Tuesday", trip: "Fun", airline: "United"};
-
-console.log(keyValueMatch(testObject1, testObject2));
-
-
-testObject3 = {city: "Los Angeles", month: "January", trip: "Business", airline: "United"};
-testObject4 = {city: "New York", day: "Tuesday", trip: "Fun", airline: "American"};
-
-console.log(keyValueMatch(testObject3, testObject4));
-
+console.log(randInt());
