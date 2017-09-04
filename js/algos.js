@@ -32,7 +32,7 @@
 // -- Repeat until array is length n
 // output: An array of length n made up of strings
 
-function greatestLength(a,b) {
+function longerString(a,b) {
   if (a > b) {
     return a;
   }
@@ -41,11 +41,13 @@ function greatestLength(a,b) {
   }
 };
 
-function longestString(array) {
-  var longString = greatestLength(array[0], array[1]);
+function longestString(array, longString) {
   for (i = 0; i < array.length; i++) {
-    greatestLength(array[i+2], longString);
+    console.log("Long string 1", longString)
+    var longString = longerString(array[i], longString);
+    console.log("Long string 2", longString);
   }
 };
 
-longestString(["aaa", "aa", "aaaa", "a"]);
+testArray = ["aaa", "aa", "a", "aaaa", "aa", "aaaaaa", "a"];
+longestString(testArray, longerString(testArray[0], testArray[1]));
