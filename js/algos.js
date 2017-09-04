@@ -31,3 +31,21 @@
 // -- Add string to array
 // -- Repeat until array is length n
 // output: An array of length n made up of strings
+
+function greatestLength(a,b) {
+  if (a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+};
+
+function longestString(array) {
+  var longString = greatestLength(array[0], array[1]);
+  for (i = 0; i < array.length; i++) {
+    greatestLength(array[i+2], longString);
+  }
+};
+
+longestString(["aaa", "aa", "aaaa", "a"]);
