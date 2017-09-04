@@ -104,11 +104,15 @@ function randomString(random_integer) {
 };
 
 function createArray(n){
-  var testArray = []
+  var testArray = [];
+  for (i=0; i < n; i++){
+    testArray.push(randomString(3));
+    return testArray;
+  }
 };
 
 console.log(randInt());
 console.log(randomString(4));
 console.log(randomString(7));
 console.log(randomString(2));
-
+console.log(createArray(5));
