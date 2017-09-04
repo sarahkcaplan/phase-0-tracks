@@ -20,10 +20,14 @@
 // 6. Continue comparing the first key of the first object to all subsequent keys of the second object until true is returned (step 3).
 // 7. If true is not returned, compare the second key of the first object with all of the keys of the second object in order until true is not returned.
 // 8. If all of the keys of the first object are evaluated against all of the keys of the second object and none are equivalent, return false.
-// 9. If all of the keys of the first object are evaluated against all of the keys of the second object and any of the keys are equivalent, if the values of those keys are not also equivalent, return false.
+// 9. If all of the keys of the first object are evaluated against all of the keys of the second object and any of the keys are equivalent but if the values of those keys are not also equivalent, return false.
 // output: boolean
 
 // Random Test Data
 // input: An integer n
 // steps:
-// output:An array of length n made up of strings
+// -- Create an empty array
+// -- Generate a string of random letters of length 1-10
+// -- Add string to array
+// -- Repeat until array is length n
+// output: An array of length n made up of strings
