@@ -33,41 +33,57 @@
 // output: An array of length n made up of strings
 
 
-// Release 0:
-function longerString(a,b) {
-  if (a > b) {
-    return a;
-  }
-  else {
-    return b;
-  }
-};
+// // Release 0:
+// function longerString(a,b) {
+//   if (a > b) {
+//     return a;
+//   }
+//   else {
+//     return b;
+//   }
+// };
 
-function longestString(array, longString) {
-  for (i = 0; i < array.length; i++) {
-    var longString = longerString(array[i], longString);
-  }
-  return longString;
-};
+// function longestString(array, longString) {
+//   for (i = 0; i < array.length; i++) {
+//     var longString = longerString(array[i], longString);
+//   }
+//   return longString;
+// };
 
-testArray = ["aaa", "aa", "a", "aaaa", "aa", "aaaaaa", "a"];
-console.log(longestString(testArray, longerString(testArray[0], testArray[1])));
+// testArray = ["aaa", "aa", "a", "aaaa", "aa", "aaaaaa", "a"];
+// console.log(longestString(testArray, longerString(testArray[0], testArray[1])));
 
 // Release 1:
 function keyValueMatch(object1, object2) {
   var object1_keys = Object.keys(object1);
   var object2_keys = Object.keys(object2);
-  var object1_values = Object.values(object1);
-  var object2_values = Object.values(object2);
 
+  console.log(object1_keys);
+  console.log(object2_keys);
   for (i = 0; i < object1_keys.length; i ++){
-    for (m = 0; m < object2_keys.length)
+    console.log("First for loop");
+    console.log("i: ", i);
+    for (m = 0; m < i;){
+      console.log("Second for loop")
+      console.log("i: ", i);
+      console.log("m: ", m);
       if (object1_keys[i] == object2_keys[m]){
-        if (object1_values[i] == object2_values[i]){
+        if (object1.object1_keys[i] == object2.object2_keys[m]){ break; }{
           return true;
         }
-      else
-        m ++;
+      }
+      else{
+        m++;
+      }
     }
   }
 };
+
+testObject1 = {city: "Los Angeles", month: "January", trip: "Business", airline: "United"};
+testObject2 = {city: "New York", day: "Tuesday", trip: "Fun", airline: "United"};
+
+console.log(keyValueMatch(testObject1, testObject2));
+
+
+// testObject3 =
+// testObject4 =
