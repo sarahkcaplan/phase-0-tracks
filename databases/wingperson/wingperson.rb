@@ -25,9 +25,17 @@ def add_friends(db, name, quote, success)
   db.execute("INSERT INTO friends (name, quote, success) VALUES (?, ?, ?)", [name, quote, success])
 end
 
-10.times do
-  add_friends(db, Faker::Name.name, 0, 'false')
+def add_quotes(db, quote)
+  db.execute("INSERT INTO QUOTES (quote) VALUES (?)", [quote])
 end
+
+200.times do
+  add_quotes(db, Faker::MostInterestingManInTheWorld.quote)
+end
+
+# 10.times do
+#   add_friends(db, Faker::Name.name, 0, 'false')
+# end
 
 db.execute(create_quotes_table_cmd)
 # db.execute("DROP TABLE friends")
