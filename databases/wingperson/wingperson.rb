@@ -10,34 +10,65 @@ create_quotes_table_cmd = <<-SQL
   )
 SQL
 
-
-create_friends_table_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS friends(
+create_success_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS success(
     id INTEGER PRIMARY KEY,
-    name VARCHAR(255),
-    gender VARCHAR(10),
     quote INT,
     success BOOLEAN,
     FOREIGN KEY(quote) REFERENCES quotes(id)
   )
 SQL
 
-def add_friends(db, name, gender, quote, success)
-  db.execute("INSERT INTO friends (name, gender, quote, success) VALUES (?, ?, ?, ?)", [name, gender, quote, success])
+create_friends_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS friends(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    gender VARCHAR(10)
+  )
+SQL
+
+def add_friends(db, name, gender)
+  db.execute("INSERT INTO friends (name, gender) VALUES (?, ?)", [name, gender])
 end
 
-# def add_quotes(db, quote)
-#   db.execute("INSERT INTO QUOTES (quote) VALUES (?)", [quote])
-# end
+def add_quotes(db, quote)
+  db.execute("INSERT INTO quotes (quote) VALUES (?)", [quote])
+end
 
-# 200.times do
-#   add_quotes(db, Faker::MostInterestingManInTheWorld.quote)
-# end
+def add_past_success(db, quote, success)
+  db.execute("INSERT INTO success (quote, success) VALUES (?, ?)", [quote, success])
+end
 
 10.times do
-  add_friends(db, Faker::Name.name, Faker::Demographic.sex, 0, 'false')
+  add_past_success(db, rand(200), rand(1))
 end
 
-db.execute(create_quotes_table_cmd)
+
+200.times do
+  add_quotes(db, Faker::MostInterestingManInTheWorld.quote)
+end
+
+10.times do
+  add_friends(db, Faker::Name.name, Faker::Demographic.sex)
+end
+
+
 # db.execute("DROP TABLE friends")
+# db.execute("DROP TABLE quotes")
+
+db.execute(create_quotes_table_cmd)
 db.execute(create_friends_table_cmd)
+db.execute(create_success_table_cmd)
+
+# friend_full_name = db.execute("SELECT name FROM friends;")
+
+# def get_first_name(friend_full_name)
+#   friend_full_name.each do |name|
+#     friend_full_name.split(" ")
+#     puts friend_full_name
+#     friend_first_name = friend_full_name[0]
+#     puts friend_first_name
+#   end
+# end
+
+# get_first_name(friend_full_name)
