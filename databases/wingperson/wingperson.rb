@@ -10,12 +10,14 @@ create_quotes_table_cmd = <<-SQL
   )
 SQL
 
-create_success_table_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS success(
+create_successes_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS successes(
     id INTEGER PRIMARY KEY,
     quote INT,
+    friend INT,
     success BOOLEAN,
-    FOREIGN KEY(quote) REFERENCES quotes(id)
+    FOREIGN KEY(quote) REFERENCES quotes(id),
+    FOREIGN KEY(friend) REFERENCES friends(id)
   )
 SQL
 
@@ -35,30 +37,32 @@ def add_quotes(db, quote)
   db.execute("INSERT INTO quotes (quote) VALUES (?)", [quote])
 end
 
-def add_past_success(db, quote, success)
-  db.execute("INSERT INTO success (quote, success) VALUES (?, ?)", [quote, success])
+def add_past_successes(db, friend, quote, success)
+  db.execute("INSERT INTO successes (friend, quote, success) VALUES (?, ?, ?)", [friend, quote, success])
 end
 
-10.times do
-  add_past_success(db, rand(200), rand(1))
-end
+# 10.times do
+#   add_past_successes(db, rand(10), rand(200), rand(1))
+# end
 
 
-200.times do
-  add_quotes(db, Faker::MostInterestingManInTheWorld.quote)
-end
+# 200.times do
+#   add_quotes(db, Faker::MostInterestingManInTheWorld.quote)
+# end
 
-10.times do
-  add_friends(db, Faker::Name.name, Faker::Demographic.sex)
-end
+# 10.times do
+#   add_friends(db, Faker::Name.name, Faker::Demographic.sex)
+# end
 
 
 # db.execute("DROP TABLE friends")
 # db.execute("DROP TABLE quotes")
+# db.execute("DROP TABLE successes")
 
-db.execute(create_quotes_table_cmd)
-db.execute(create_friends_table_cmd)
-db.execute(create_success_table_cmd)
+
+# db.execute(create_quotes_table_cmd)
+# db.execute(create_friends_table_cmd)
+db.execute(create_successes_table_cmd)
 
 # friend_full_name = db.execute("SELECT name FROM friends;")
 
