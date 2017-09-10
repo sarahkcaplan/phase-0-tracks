@@ -21,28 +21,6 @@ def get_new_quote(db)
   db.execute("SELECT quote FROM quotes WHERE id = #{number}")
 end
 
-def rate_success(db, reaction, friend_name)
-  if reaction == "Great!"
-    @success = true
-    db.execute("SQL
-    INSERT INTO successes(
-      friend, quote, success)
-    VALUES(#{friend_id}, #{success})")
-  elsif reaction == "Uhhm..."
-    @success = false
-    db.execute("SQL
-    INSERT INTO successes(
-      friend, quote, success)
-    VALUES(#{friend_id}, #{success})")
-  else
-    @success = false
-    db.execute("SQL
-    INSERT INTO successes(
-      friend, quote, success)
-    VALUES(#{friend_id}, #{success})")
-  end
-end
-
 create_quotes_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS quotes(
     id INTEGER PRIMARY KEY,
@@ -99,8 +77,6 @@ friend_name = gets.chomp
 add_friends(db, friend_name, 'male')
 puts "Drop this 'fact' about #{friend_name} into conversation. #{friend_name} is sooo interesting!"
 puts get_new_quote(db)
-puts "So, how did that go? (Great! or Uhmm...)"
-reaction = gets.chomp
-rate_success(db, reaction, friend_name)
-puts "Well, you're a great wingperson."
+puts "So, how did that go? You're a great wingperson."
+
 
